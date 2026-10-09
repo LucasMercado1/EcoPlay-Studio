@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPlay Studios</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <!-- OBRIGAÇÃO: Cabeçalho com nav -->
+    <header>
+        <h2>EcoPlay Studios</h2>
+        <nav>
+            <!-- OBRIGAÇÃO: Mínimo 3 links de navegação -->
+            <button id="menu-inicio" class="btn-menu ativo">Início</button>
+            <button id="menu-loja" class="btn-menu">Loja</button>
+            <a href="#sobre" class="link-ancora">Sobre</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Placar Central -->
+        <div class="caixa-placar">
+            <span>Seus EcoPontos: <b id="pontos-topo">0</b></span>
+            <button id="btn-tema" style="margin-left: 20px;">Mudar Cor do Site</button>
+        </div>
+
+        <!-- PÁGINA 1: INÍCIO (VITRINE) -->
+        <section id="tela-inicio">
+            <h3>Nossos Jogos</h3>
+            <p>Escolha um jogo para ver a explicação:</p>
+
+            <!-- Cards Super Simples -->
+            <div class="bloco-jogo">
+                <b>Eco-Tycoon</b>
+                <p>Simulador de cidade verde.</p>
+                <button class="btn-ver" data-jogo="ecotycoon">Ver Explicação</button>
+            </div>
+
+            <div class="bloco-jogo">
+                <b>Clean the Seas</b>
+                <p>Limpeza de plástico nos oceanos.</p>
+                <button class="btn-ver" data-jogo="cleanseas">Ver Explicação</button>
+            </div>
+
+            <div class="bloco-jogo">
+                <b>Green Runner</b>
+                <p>Corrida e coleta de lixo reciclável.</p>
+                <button class="btn-ver" data-jogo="greenrunner">Ver Explicação</button>
+            </div>
+
+            <!-- Botão simples de teste para simular ganho de pontos -->
+            <div class="bloco-jogo" style="background-color: #ddd;">
+                <b>Área de Testes</b>
+                <p>Ganhe pontos para usar na loja:</p>
+                <button id="btn-ganhar">+100 Pontos Gratuitos</button>
+            </div>
+        </section>
+
+        <!-- PÁGINA 2: EXPLICAÇÃO DO JOGO -->
+        <section id="tela-jogo" class="escondido">
+            <br>
+            <button id="btn-voltar" style="background-color: #555;">← Voltar para o Início</button>
+
+            <div class="bloco-jogo">
+                <h4 id="nome-jogo">Nome do Jogo</h4>
+                <p id="texto-jogo">Explicação do jogo...</p>
+            </div>
+
+            <div class="bloco-jogo" style="background-color: #ddd;">
+                <label>Você gostou da proposta desse jogo?</label><br><br>
+                <select id="campo-voto">
+                    <option value="">Escolha...</option>
+                    <option value="Gostei muito!">Achei muito legal</option>
+                    <option value="Achei normal.">Achei normal</option>
+                </select>
+                <p id="mensagem-voto" style="font-weight: bold; margin-top: 10px;"></p>
+            </div>
+        </section>
+
+        <!-- PÁGINA 3: LOJA DE RECOMPENSAS -->
+        <section id="tela-loja" class="escondido">
+            <h3>EcoLoja</h3>
+            <p>Troque seus pontos por prêmios:</p>
+
+            <div class="bloco-jogo">
+                <b>Prêmio 1: Wallpaper de Floresta</b>
+                <p>Custo: 50 pontos</p>
+                <button class="btn-comprar" data-custo="50">Resgatar Wallpaper</button>
+            </div>
+
+            <div class="bloco-jogo">
+                <b>Prêmio 2: Skin de Robô Reciclador</b>
+                <p>Custo: 150 pontos</p>
+                <button class="btn-comprar" data-custo="150">Resgatar Skin</button>
+            </div>
+
+            <!-- Formulário com validação HTML simples -->
+            <div class="bloco-jogo" style="background-color: #ddd;">
+                <b>Sugira um prêmio novo:</b><br><br>
+                <form id="formulario-sugestao">
+                    <input type="text" id="campo-nome" placeholder="Seu nome" required minlength="3">
+                    <button type="submit">Enviar</button>
+                </form>
+                <p id="mensagem-final" style="font-weight: bold; margin-top: 10px;"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer id="sobre">
+        <p>2026 EcoPlay Studios</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
